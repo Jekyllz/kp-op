@@ -1,5 +1,4 @@
-Custom Keypass to 1Pass Importing program to retain nested-hierarchy structure that was present in Keypass.
-
+**Custom Keypass to 1Pass Importing program to retain nested-hierarchy structure that was present in Keypass.**
 I started a journey with taking responsibility in my department of a painfully manual process that had already exceeded two years from previous engineers of migrating our customer base from keypass. 
 The 1Pass CSV importing tool is very standard and we did not want to bulk import all our customers in a one dump loaded vault. This would also lose the much needed nested-structure that Keypass directory had and need individual vaults to share separated access.
 
@@ -29,23 +28,25 @@ My setup is WSL and Powershell - this is due to my works restriction of installi
 but you can use the python scripts without WSL just ensure the file directory is correctly mentioned in the name of the file you're importing.
 
 1. **Export Keypass XML 2**
-File > Export > Keepass XML (2.x)  
- ![image](https://github.com/user-attachments/assets/07cb603e-83cf-434c-bdf3-0d82eead3992)
+	File > Export > Keepass XML (2.x)  
+	![image](https://github.com/user-attachments/assets/07cb603e-83cf-434c-bdf3-0d82eead3992)
 
 2. Describe the xml name subgroup names within multisite-phase-xml-to-csv.py 
-In this case the export name is example_export.xml - I want the generated csv to be called example_export.csv and the keypass root group is 'company keypass' and sub-group is 'self-hosted customers' (ensure only updating these group names in lowercase within this script)
-![image](https://github.com/user-attachments/assets/b9ce8831-f740-4fc6-9dd8-e845535fb46b)
+	In this case the export name is example_export.xml -
+	I want the generated csv to be called example_export.csv and the keypass root group is 'company keypass' and sub-group is 'self-hosted customers'
+	(ensure only updating these group names in lowercase within this script)
+	![image](https://github.com/user-attachments/assets/b9ce8831-f740-4fc6-9dd8-e845535fb46b)
 
-3. The XML Export and python script are within the same directory - again I'm using WSL but you may wish to figure with cmd if you don't have that. 
-![image](https://github.com/user-attachments/assets/0f3425fe-a27f-45f3-82d7-5ec3801b0db2)
+4. The XML Export and python script are within the same directory - again I'm using WSL but you may wish to figure with cmd if you don't have that. 
+	![image](https://github.com/user-attachments/assets/0f3425fe-a27f-45f3-82d7-5ec3801b0db2)
 
-
-4. the CSV is generated - their will be no records within this CSV if the subgroup names are incorrect in multisite-phase-xml-to-csv.py
+5. the CSV is generated - their will be no records within this CSV if the subgroup names are incorrect in multisite-phase-xml-to-csv.py
 	![image](https://github.com/user-attachments/assets/9b712cd3-1529-4e1f-b7b4-beea902e9e42)
 	Verify the data looks correct to what was exported:
 	![image](https://github.com/user-attachments/assets/a91fa0cb-f366-4a1a-871a-e854349d9616)
+6. 
 
-5. Edit convert-csv-to-jsons.py
+7. Edit convert-csv-to-jsons.py
 	Add the csv and json file directory you wish to generate 
 	Now there's an individual json file for each customer to be imported to OP
 	![image](https://github.com/user-attachments/assets/6d67e5ed-b8d8-4acd-be97-846c897a313b)
