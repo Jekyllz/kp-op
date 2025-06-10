@@ -24,20 +24,19 @@ Main > Type of Customer > Customer Name > Prod/pre-prod > Sites
  ![image](https://github.com/user-attachments/assets/4c2f3f84-1221-49af-82dd-c721dcb50ba9)
  
 **How to use**
-My setup is WSL and Powershell - this is due to restrictions of installing OP in WSL. but you can use the python scripts without WSL just ensure the file directory is correctly mentioned in the name of the file you're importing.
-	1. **Export Keypass XML 2**
+My setup is WSL and Powershell - this is due to my works restriction of installing OP in WSL. 
+but you can use the python scripts without WSL just ensure the file directory is correctly mentioned in the name of the file you're importing.
+
+1. **Export Keypass XML 2**
 File > Export > Keepass XML (2.x)  
  ![image](https://github.com/user-attachments/assets/07cb603e-83cf-434c-bdf3-0d82eead3992)
 
-	
 2. Describe the xml name subgroup names within multisite-phase-xml-to-csv.py 
 In this case the export name is example_export.xml - I want the generated csv to be called example_export.csv and the keypass root group is 'company keypass' and sub-group is 'self-hosted customers' (ensure only updating these group names in lowercase within this script)
 ![image](https://github.com/user-attachments/assets/b9ce8831-f740-4fc6-9dd8-e845535fb46b)
 
-
 3. The XML Export and python script are within the same directory - again I'm using WSL but you may wish to figure with cmd if you don't have that. 
 ![image](https://github.com/user-attachments/assets/0f3425fe-a27f-45f3-82d7-5ec3801b0db2)
-
 
 4. the CSV is generated - their will be no records within this CSV if the subgroup names are incorrect in multisite-phase-xml-to-csv.py
 ![image](https://github.com/user-attachments/assets/9b712cd3-1529-4e1f-b7b4-beea902e9e42)
@@ -47,20 +46,11 @@ Verify the data looks correct to what was exported:
 
 5. Edit convert-csv-to-jsons.py
 Add the csv and json file directory you wish to generate 
- 
+
 Now there's an individual json file for each customer to be imported to OP
-![image](https://github.com/user-attachments/assets/fe406c9b-6a9f-49f3-b160-e6d1999faa78)
 
 You can adjust permissions to push to the customer vault via editing powershell-op-import-single-customer.ps1
 Add appropiate Emails and Group Names 
 ![image](https://github.com/user-attachments/assets/61684688-c9ee-4dca-aa81-97b2ec85727e)
-
-
-
-
-
-
-
-
 
 ![image](https://github.com/user-attachments/assets/1a0be581-7267-4c6a-bade-02c2630a7804)
