@@ -84,11 +84,20 @@ each import can take a few seconds. you'll be prompted by OnePass to authorise o
 **In Action**
 
 **Powershell cycling through JSONs**
-https://github.com/user-attachments/assets/86f6fe86-16bc-44c4-a908-e7a707b2739b
+
+
+https://github.com/user-attachments/assets/a4dbad2a-db28-47be-b8a5-35d554a10b31
+
 
 
 **1Password items being included within vault**
-https://github.com/user-attachments/assets/5ffe6c5d-309f-4273-abb4-f1bba59f8d59
+
+
+
+
+
+https://github.com/user-attachments/assets/89b062d6-cafe-400d-893b-46dcc66593b3
+
 
 
 
