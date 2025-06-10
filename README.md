@@ -27,34 +27,70 @@ Main > Type of Customer > Customer Name > Prod/pre-prod > Sites
 My setup is WSL and Powershell - this is due to my works restriction of installing OP in WSL. 
 but you can use the python scripts without WSL just ensure the file directory is correctly mentioned in the name of the file you're importing.
 
-1. **Export Keypass XML 2**
+I assume you know how to use nano, linux, powershell etc. sorry I don't have enough time to write the most perrfect guide for this!
+
+**1. Export Keypass XML 2**
 	File > Export > Keepass XML (2.x)  
 	![image](https://github.com/user-attachments/assets/07cb603e-83cf-434c-bdf3-0d82eead3992)
 
-2. Describe the xml name subgroup names within multisite-phase-xml-to-csv.py 
+**2. Describe the xml name subgroup names within multisite-phase-xml-to-csv.py **
 	In this case the export name is example_export.xml -
 	I want the generated csv to be called example_export.csv and the keypass root group is 'company keypass' and sub-group is 'self-hosted customers'
 	(ensure only updating these group names in lowercase within this script)
-	![image](https://github.com/user-attachments/assets/b9ce8831-f740-4fc6-9dd8-e845535fb46b)
 
-4. The XML Export and python script are within the same directory - again I'm using WSL but you may wish to figure with cmd if you don't have that. 
+	```nano multisite-phase-xml-to-csv.py```
+
+	```python multisite-phase-xml-to-csv.py```
+
+![image](https://github.com/user-attachments/assets/b9ce8831-f740-4fc6-9dd8-e845535fb46b)
+
+**4. The XML Export and python script are within the same directory - again I'm using WSL but you may wish to figure with cmd if you don't have that. **
 	![image](https://github.com/user-attachments/assets/0f3425fe-a27f-45f3-82d7-5ec3801b0db2)
 
-5. the CSV is generated - there will be no records within this CSV if the subgroup names are incorrect in multisite-phase-xml-to-csv.py
+**5. the CSV is generated - there will be no records within this CSV if the subgroup names are incorrect in multisite-phase-xml-to-csv.py**
 	![image](https://github.com/user-attachments/assets/9b712cd3-1529-4e1f-b7b4-beea902e9e42)
 	Verify the data looks correct to what was present in KeyPass
 	![image](https://github.com/user-attachments/assets/a91fa0cb-f366-4a1a-871a-e854349d9616)
 
-7. Edit convert-csv-to-jsons.py
+**6. Edit convert-csv-to-jsons.py**
 	Add the csv and json file directory you wish to generate
 	
+	```nano convert-csv-to-jsons.py```
+
+	![image](https://github.com/user-attachments/assets/1e085cb6-d864-413a-8a7b-9c8d583cf47a)
+
+	```python convert-csv-to-jsons.py```
+
+	![image](https://github.com/user-attachments/assets/079c9e6a-956f-43ef-912e-471b9c2b1e5a)
 
 
-	Now there's an individual json file for each customer to be imported to OP
-	![image](https://github.com/user-attachments/assets/6d67e5ed-b8d8-4acd-be97-846c897a313b)
+**8. Now there's an individual json file for each customer to be imported to OP**
+   	![image](https://github.com/user-attachments/assets/6d67e5ed-b8d8-4acd-be97-846c897a313b)
 
 
-
-You can adjust permissions to push to the customer vault via editing powershell-op-import-single-customer.ps1
-	Add appropiate Emails and Group Names 
+**9. You can adjust permissions to push to the customer vault via editing powershell-op-import-single-customer.ps1**
+	Add appropiate Emails and Group Names respectively
 	![image](https://github.com/user-attachments/assets/61684688-c9ee-4dca-aa81-97b2ec85727e)
+
+**10. Pushing to OP >**
+move the customer json files to a folder you can access via powershell and this command will cycle through that given directory for every json file and import.
+each import can take a few seconds. you'll be prompted by OnePass to authorise op to proceed. each entry takes a minute or two - 
+```Get-ChildItem -Path ".\example_customers\" -Filter "*.json" | ForEach-Object { ./powershell-op-import-single-customer.ps1 $_.FullName }```
+
+![image](https://github.com/user-attachments/assets/96961bcc-e16f-4afd-83c6-a7ed4192ec06)
+
+
+
+**In Action**
+
+**Powershell cycling through JSONs**
+https://github.com/user-attachments/assets/86f6fe86-16bc-44c4-a908-e7a707b2739b
+
+
+**1Password items being included within vault**
+https://github.com/user-attachments/assets/5ffe6c5d-309f-4273-abb4-f1bba59f8d59
+
+
+
+
+
