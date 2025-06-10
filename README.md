@@ -40,14 +40,16 @@ but you can use the python scripts without WSL just ensure the file directory is
 4. The XML Export and python script are within the same directory - again I'm using WSL but you may wish to figure with cmd if you don't have that. 
 	![image](https://github.com/user-attachments/assets/0f3425fe-a27f-45f3-82d7-5ec3801b0db2)
 
-5. the CSV is generated - their will be no records within this CSV if the subgroup names are incorrect in multisite-phase-xml-to-csv.py
+5. the CSV is generated - there will be no records within this CSV if the subgroup names are incorrect in multisite-phase-xml-to-csv.py
 	![image](https://github.com/user-attachments/assets/9b712cd3-1529-4e1f-b7b4-beea902e9e42)
-	Verify the data looks correct to what was exported:
+	Verify the data looks correct to what was present in KeyPass
 	![image](https://github.com/user-attachments/assets/a91fa0cb-f366-4a1a-871a-e854349d9616)
-6. 
 
 7. Edit convert-csv-to-jsons.py
-	Add the csv and json file directory you wish to generate 
+	Add the csv and json file directory you wish to generate
+	
+
+
 	Now there's an individual json file for each customer to be imported to OP
 	![image](https://github.com/user-attachments/assets/6d67e5ed-b8d8-4acd-be97-846c897a313b)
 
