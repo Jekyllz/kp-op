@@ -1,4 +1,4 @@
-Custom Keypass to 1Pass Importing programs to retain nested-hierarchy structure.
+Custom Keypass to 1Pass Importing program to retain nested-hierarchy structure that was present in Keypass.
 
 I started a journey with taking responsibility in my department of a painfully manual process that had already exceeded two years from previous engineers of migrating our customer base from keypass. 
 The 1Pass CSV importing tool is very standard and we did not want to bulk import all our customers in a one dump loaded vault. This would also lose the much needed nested-structure that Keypass directory had and need individual vaults to share separated access.
