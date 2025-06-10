@@ -24,6 +24,7 @@ Main > Type of Customer > Customer Name > Prod/pre-prod > Sites
  ![image](https://github.com/user-attachments/assets/4c2f3f84-1221-49af-82dd-c721dcb50ba9)
  
 **How to use**
+
 My setup is WSL and Powershell - this is due to my works restriction of installing OP in WSL. 
 but you can use the python scripts without WSL just ensure the file directory is correctly mentioned in the name of the file you're importing.
 
@@ -38,17 +39,19 @@ In this case the export name is example_export.xml - I want the generated csv to
 3. The XML Export and python script are within the same directory - again I'm using WSL but you may wish to figure with cmd if you don't have that. 
 ![image](https://github.com/user-attachments/assets/0f3425fe-a27f-45f3-82d7-5ec3801b0db2)
 
-4. the CSV is generated - their will be no records within this CSV if the subgroup names are incorrect in multisite-phase-xml-to-csv.py
-![image](https://github.com/user-attachments/assets/9b712cd3-1529-4e1f-b7b4-beea902e9e42)
 
-Verify the data looks correct to what was exported:
-![image](https://github.com/user-attachments/assets/a91fa0cb-f366-4a1a-871a-e854349d9616)
+4. the CSV is generated - their will be no records within this CSV if the subgroup names are incorrect in multisite-phase-xml-to-csv.py
+	![image](https://github.com/user-attachments/assets/9b712cd3-1529-4e1f-b7b4-beea902e9e42)
+	Verify the data looks correct to what was exported:
+	![image](https://github.com/user-attachments/assets/a91fa0cb-f366-4a1a-871a-e854349d9616)
 
 5. Edit convert-csv-to-jsons.py
-Add the csv and json file directory you wish to generate 
+	Add the csv and json file directory you wish to generate 
+	Now there's an individual json file for each customer to be imported to OP
+	![image](https://github.com/user-attachments/assets/6d67e5ed-b8d8-4acd-be97-846c897a313b)
 
-Now there's an individual json file for each customer to be imported to OP
+
 
 You can adjust permissions to push to the customer vault via editing powershell-op-import-single-customer.ps1
-Add appropiate Emails and Group Names 
-![image](https://github.com/user-attachments/assets/61684688-c9ee-4dca-aa81-97b2ec85727e)
+	Add appropiate Emails and Group Names 
+	![image](https://github.com/user-attachments/assets/61684688-c9ee-4dca-aa81-97b2ec85727e)
