@@ -52,5 +52,3 @@ Now there's an individual json file for each customer to be imported to OP
 You can adjust permissions to push to the customer vault via editing powershell-op-import-single-customer.ps1
 Add appropiate Emails and Group Names 
 ![image](https://github.com/user-attachments/assets/61684688-c9ee-4dca-aa81-97b2ec85727e)
-
-![image](https://github.com/user-attachments/assets/1a0be581-7267-4c6a-bade-02c2630a7804)
