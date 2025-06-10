@@ -57,20 +57,24 @@ I assume you know how to use nano, linux, powershell in this guide. apologies if
 	
 	```nano convert-csv-to-jsons.py```
 
-	![image](https://github.com/user-attachments/assets/1e085cb6-d864-413a-8a7b-9c8d583cf47a)
+	
+![image](https://github.com/user-attachments/assets/1e085cb6-d864-413a-8a7b-9c8d583cf47a)
 
 	```python convert-csv-to-jsons.py```
 
-	![image](https://github.com/user-attachments/assets/079c9e6a-956f-43ef-912e-471b9c2b1e5a)
+	
+![image](https://github.com/user-attachments/assets/079c9e6a-956f-43ef-912e-471b9c2b1e5a)
 
 
 **8. Now there's an individual json file for each customer to be imported to OP**
-   	![image](https://github.com/user-attachments/assets/6d67e5ed-b8d8-4acd-be97-846c897a313b)
+   	
+![image](https://github.com/user-attachments/assets/6d67e5ed-b8d8-4acd-be97-846c897a313b)
 
 
 **9. You can adjust permissions to push to the customer vault via editing powershell-op-import-single-customer.ps1**
 	Add appropiate Emails and Group Names respectively
-	![image](https://github.com/user-attachments/assets/61684688-c9ee-4dca-aa81-97b2ec85727e)
+	
+![image](https://github.com/user-attachments/assets/61684688-c9ee-4dca-aa81-97b2ec85727e)
 
 **10. Pushing to OP >**
 move the customer json files to a folder you can access via powershell and this command will cycle through that given directory for every json file and import.
