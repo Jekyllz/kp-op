@@ -27,7 +27,7 @@ Main > Type of Customer > Customer Name > Prod/pre-prod > Sites
 My setup is WSL and Powershell - this is due to my works restriction of installing OP in WSL. 
 but you can use the python scripts without WSL just ensure the file directory is correctly mentioned in the name of the file you're importing.
 
-I assume you know how to use nano, linux, powershell etc. sorry I don't have enough time to write the most perrfect guide for this!
+I assume you know how to use nano, linux, powershell in this guide. apologies if this is note the most detailed guide. 
 
 **1. Export Keypass XML 2**
 	File > Export > Keepass XML (2.x)  
