@@ -78,7 +78,7 @@ I assume you know how to use nano, linux, powershell in this guide. apologies if
 
 **10. Pushing to OP >**
 move the customer json files to a folder you can access via powershell and this command will cycle through that given directory for every json file and import.
-each import can take a few seconds. you'll be prompted by OnePass to authorise op to proceed. each entry takes a minute or two - 
+each vault import can take a few minutes. you'll be prompted by OnePass to authorise op to proceed. each entry takes a second or two - 
 ```Get-ChildItem -Path ".\example_customers\" -Filter "*.json" | ForEach-Object { ./powershell-op-import-single-customer.ps1 $_.FullName }```
 
 ![image](https://github.com/user-attachments/assets/96961bcc-e16f-4afd-83c6-a7ed4192ec06)
